@@ -2,19 +2,18 @@ package org.basic.order.service;
 
 import org.basic.member.Member;
 import org.basic.member.repository.MemberRepository;
-import org.basic.member.repository.MemberRepositoryImpl;
 import org.basic.order.Order;
-import org.basic.order.Product;
 import org.basic.policy.DiscountPolicy;
-import org.basic.policy.FixDiscountPolicy;
-
-import java.util.HashMap;
-import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
 
-    private final MemberRepository memberRepository = new MemberRepositoryImpl();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(String memberId, String itemName, int itemPrice) {

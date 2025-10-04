@@ -1,14 +1,20 @@
 package org.basic.member;
 
-import com.sun.source.tree.AssertTree;
 import org.assertj.core.api.Assertions;
+import org.basic.common.AppConfig;
 import org.basic.member.service.MemberService;
-import org.basic.member.service.MemberServiceImpl;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.annotation.Testable;
 
-public class MemberServiceTest {
-    MemberService memberService = new MemberServiceImpl();
+class MemberServiceTest {
+
+    MemberService memberService;
+
+    @BeforeEach
+    public void init(){
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join(){

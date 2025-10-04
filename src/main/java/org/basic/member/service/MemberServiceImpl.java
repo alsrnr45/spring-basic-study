@@ -2,13 +2,16 @@ package org.basic.member.service;
 
 import org.basic.member.Member;
 import org.basic.member.repository.MemberRepository;
-import org.basic.member.repository.MemberRepositoryImpl;
 
 import java.util.List;
 
 public class MemberServiceImpl implements  MemberService {
 
-    private final MemberRepository memberRepository = new MemberRepositoryImpl();
+    private final MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public List<Member> getMembers() {
