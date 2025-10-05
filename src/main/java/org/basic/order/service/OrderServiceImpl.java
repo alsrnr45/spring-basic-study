@@ -4,7 +4,9 @@ import org.basic.member.Member;
 import org.basic.member.repository.MemberRepository;
 import org.basic.order.Order;
 import org.basic.policy.DiscountPolicy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;

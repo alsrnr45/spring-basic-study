@@ -1,11 +1,13 @@
 package org.basic.member.repository;
 
 import org.basic.member.Member;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Component
 public class MemberRepositoryImpl implements MemberRepository {
 
     private static Map<String, Member> memberTb = new ConcurrentHashMap<String, Member>();

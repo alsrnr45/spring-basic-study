@@ -2,9 +2,11 @@ package org.basic.member.service;
 
 import org.basic.member.Member;
 import org.basic.member.repository.MemberRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class MemberServiceImpl implements  MemberService {
 
     private final MemberRepository memberRepository;
