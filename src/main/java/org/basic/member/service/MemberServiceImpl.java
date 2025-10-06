@@ -1,5 +1,6 @@
 package org.basic.member.service;
 
+import lombok.RequiredArgsConstructor;
 import org.basic.member.Member;
 import org.basic.member.repository.MemberRepository;
 import org.springframework.stereotype.Component;
@@ -7,13 +8,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class MemberServiceImpl implements  MemberService {
 
     private final MemberRepository memberRepository;
-
-    public MemberServiceImpl(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
 
     @Override
     public List<Member> getMembers() {

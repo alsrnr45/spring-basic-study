@@ -1,5 +1,6 @@
 package org.basic.member.repository;
 
+import lombok.RequiredArgsConstructor;
 import org.basic.member.Member;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
+@RequiredArgsConstructor
 public class MemberRepositoryImpl implements MemberRepository {
 
     private static Map<String, Member> memberTb = new ConcurrentHashMap<String, Member>();
